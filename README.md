@@ -1,5 +1,14 @@
 ## father-utoo-pack-demo
 
+### Usage
+
+```bash
+pnpm i
+pnpm run build
+```
+
+### Debug Local
+
 When test `utoo-pack` under local, use pnpm link to your local file:
 
 ```json
