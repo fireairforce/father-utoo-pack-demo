@@ -7,12 +7,11 @@ export default defineConfig({
         generateUnminified: true,
     },
     define: {
-        'process.env.BIGFISH_LIB_PUBLISH_VERSION': "process.env.BIGFISH_LIB_PUBLISH_VERSION"
+        'process.env.FATHER_PUBLISH_VERSION': "0.0.1"
     },
     alias: {
         '@': path.resolve(__dirname, './src'),
         'hello-a': path.resolve(__dirname, './src/a.tsx'),
         'hello-foo': path.resolve(__dirname, './src/foo.ts'),
-        '@@': '/Users/zoomdong/zuling-test/.dumi/tmp'
     },
 })
