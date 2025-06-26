@@ -35,3 +35,11 @@ pub async fn get_pack_package(context_directory: Vc<FileSystemPath>) -> Result<V
     return Ok(local_utoo_pack_path);
 }
 ```
+
+### Package Manager
+
+If you use pnpm as package manager, you need to set `.npmrc` to hoist `@utoo/pack`(which will help `@utoo/pack` can resolve it):
+
+```bash
+public-hoist-pattern[]=@utoo/pack
+```
