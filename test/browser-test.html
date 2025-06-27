@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMD 产物浏览器测试</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .test-result {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        .info {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        #react-demo {
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            background-color: #f8f9ff;
+        }
+    </style>
+</head>
+<body>
+    <h1>UMD 产物浏览器测试</h1>
+    
+    <div class="test-section">
+        <h2>1. 加载状态检测</h2>
+        <div id="load-status" class="test-result info">正在加载 UMD 文件...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>2. 全局变量检测</h2>
+        <div id="global-vars" class="test-result info">检测中...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>3. React 功能测试</h2>
+        <div id="react-test" class="test-result info">测试中...</div>
+        <div id="react-demo"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>4. 控制台输出</h2>
+        <div id="console-output" class="test-result info">
+            <pre id="console-logs"></pre>
+        </div>
+    </div>
+
+    <!-- 引入你的UMD文件 -->
+    <script>console.log('after umd', window.a)</script>
+    <script src="../dist/umd/utoo-pack-father.js"></script>
+    
+    <script>
+        // 收集控制台输出
+        const consoleLogs = [];
+        const originalLog = console.log;
+        const originalError = console.error;
+        const originalWarn = console.warn;
+
+        console.log = function(...args) {
+            consoleLogs.push(['LOG', ...args]);
+            originalLog.apply(console, args);
+            updateConsoleOutput();
+        };
+
+        console.error = function(...args) {
+            consoleLogs.push(['ERROR', ...args]);
+            originalError.apply(console, args);
+            updateConsoleOutput();
+        };
+
+        console.warn = function(...args) {
+            consoleLogs.push(['WARN', ...args]);
+            originalWarn.apply(console, args);
+            updateConsoleOutput();
+        };
+
+        function updateConsoleOutput() {
+            const consoleElement = document.getElementById('console-logs');
+            consoleElement.textContent = consoleLogs.map(log => 
+                `[${log[0]}] ${log.slice(1).map(arg => 
+                    typeof arg === 'object' ? JSON.stringify(arg, null, 2) : String(arg)
+                ).join(' ')}`
+            ).join('\n');
+        }
+
+        function runTests() {
+            try {
+                // 测试1: 检查加载状态
+                updateLoadStatus();
+                
+                // 测试2: 检查全局变量
+                checkGlobalVariables();
+                
+                // 测试3: 测试React功能
+                testReactFunctionality();
+                
+            } catch (error) {
+                console.error('测试过程中发生错误:', error);
+                document.getElementById('load-status').innerHTML = 
+                    `<div class="error">测试失败: ${error.message}</div>`;
+            }
+        }
+
+        function updateLoadStatus() {
+            const loadStatusEl = document.getElementById('load-status');
+            loadStatusEl.innerHTML = '<div class="success">UMD 文件加载成功！</div>';
+        }
+
+        function checkGlobalVariables() {
+            const globalVarsEl = document.getElementById('global-vars');
+            const results = [];
+
+            // 检查可能的全局变量
+            const possibleGlobals = [
+                'React', 'ReactDOM', 'Component', 'Fragment', 
+                'createElement', 'useState', 'useEffect'
+            ];
+
+            possibleGlobals.forEach(varName => {
+                if (typeof window[varName] !== 'undefined') {
+                    results.push(`✓ ${varName}: ${typeof window[varName]}`);
+                } else {
+                    results.push(`✗ ${varName}: 未找到`);
+                }
+            });
+
+            // 检查globalThis上的属性
+            const globalThisKeys = Object.getOwnPropertyNames(globalThis).filter(key => {
+                return typeof globalThis[key] === 'function' || 
+                       (typeof globalThis[key] === 'object' && globalThis[key] !== null);
+            });
+
+            if (globalThisKeys.length > 0) {
+                results.push('', 'globalThis 上的新属性:');
+                globalThisKeys.slice(-10).forEach(key => { // 只显示最后10个
+                    results.push(`  ${key}: ${typeof globalThis[key]}`);
+                });
+            }
+
+            globalVarsEl.innerHTML = `<div class="info"><pre>${results.join('\n')}</pre></div>`;
+        }
+
+        function testReactFunctionality() {
+            const reactTestEl = document.getElementById('react-test');
+            const reactDemoEl = document.getElementById('react-demo');
+            
+            try {
+                // 尝试访问React相关功能
+                let React = window.React;
+                
+                // 如果没有React，尝试其他可能的导出
+                if (!React) {
+                    // 检查是否有其他React相关的全局变量
+                    const globalKeys = Object.keys(window);
+                    const reactKeys = globalKeys.filter(key => 
+                        key.toLowerCase().includes('react') || 
+                        key.toLowerCase().includes('component') ||
+                        key.toLowerCase().includes('element')
+                    );
+                    
+                    if (reactKeys.length > 0) {
+                        reactTestEl.innerHTML = `<div class="info">找到可能的React相关导出: ${reactKeys.join(', ')}</div>`;
+                        React = window[reactKeys[0]];
+                    }
+                }
+
+                if (React && React.createElement) {
+                    // 测试React.createElement
+                    const element = React.createElement('div', { 
+                        style: { color: 'green', fontWeight: 'bold' } 
+                    }, 'React 创建成功！这是通过 React.createElement 创建的元素');
+                    
+                    reactTestEl.innerHTML = '<div class="success">React 功能测试通过！</div>';
+                    
+                    // 尝试渲染到DOM（简单的innerHTML方式，因为可能没有ReactDOM）
+                    reactDemoEl.innerHTML = `
+                        <h3>React 元素创建测试</h3>
+                        <p>✓ React.createElement 工作正常</p>
+                        <p>✓ 元素类型: ${element.type}</p>
+                        <p>✓ 元素props: ${JSON.stringify(element.props, null, 2)}</p>
+                    `;
+                    
+                } else {
+                    reactTestEl.innerHTML = '<div class="error">未找到 React 或 React.createElement</div>';
+                    
+                    // 显示所有可用的全局函数
+                    const availableFunctions = Object.keys(window).filter(key => 
+                        typeof window[key] === 'function' && 
+                        !key.startsWith('webkit') && 
+                        !key.startsWith('moz') &&
+                        key.length < 50
+                    );
+                    
+                    reactDemoEl.innerHTML = `
+                        <h3>可用的全局函数</h3>
+                        <pre>${availableFunctions.slice(0, 20).join('\n')}</pre>
+                    `;
+                }
+                
+            } catch (error) {
+                reactTestEl.innerHTML = `<div class="error">React 测试失败: ${error.message}</div>`;
+                reactDemoEl.innerHTML = `<pre>错误详情: ${error.stack}</pre>`;
+            }
+        }
+
+        // 页面加载完成后运行测试
+        window.addEventListener('load', function() {
+            setTimeout(runTests, 100); // 稍微延迟确保UMD文件完全加载
+        });
+
+        // 监听错误
+        window.addEventListener('error', function(event) {
+            console.error('页面错误:', event.error);
+        });
+    </script>
+</body>
+</html> 
