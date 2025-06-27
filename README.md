@@ -7,6 +7,14 @@ pnpm i
 pnpm run build
 ```
 
+### Test
+
+Run:
+
+```bash
+node test-umd.js
+```
+
 ### Debug Local
 
 When test `utoo-pack` under local, use pnpm link to your local file:
