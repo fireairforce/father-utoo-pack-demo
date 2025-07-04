@@ -5,15 +5,15 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@utoo/pack': 0.0.1-alpha.15
+  '@utoo/pack': 0.0.1-alpha.18
 
 importers:
 
   .:
     dependencies:
       father:
-        specifier: 4.5.6-canary.0
-        version: 4.5.6-canary.0(@babel/core@7.27.4)(@types/node@24.0.4)(styled-components@6.1.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(webpack@5.99.9)
+        specifier: 4.5.6-canary.1
+        version: 4.5.6-canary.1(@babel/core@7.27.4)(@types/node@24.0.4)(@types/webpack@5.28.5)(styled-components@6.1.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(webpack@5.99.9)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -757,6 +757,9 @@ packages:
   '@types/stylis@4.2.5':
     resolution: {integrity: sha512-1Xve+NMN7FWjY14vLoY5tL3BVEQ/n42YLwaqJIPYhotZ9uBHt87VceMwWQpzmdEt2TNXIorIFG+YeCUUW7RInw==}
 
+  '@types/webpack@5.28.5':
+    resolution: {integrity: sha512-wR87cgvxj3p6D0Crt1r5avwqffqPXUkNlnQ1mjU93G7gCuFjufZR4I6j8cz5g1F1tTYpfOOFvly+cmIQwL9wvw==}
+
   '@types/yargs-parser@21.0.3':
     resolution: {integrity: sha512-I4q9QU9MQv4oEOz4tAHJtNz1cwuLxn2F3xcc2iV5WdqLPpUnj30aUuxt1mAxYTG+oe8CZMV/+6rU4S4gRDzqtQ==}
 
@@ -819,51 +822,53 @@ packages:
     resolution: {integrity: sha512-rPKoXKZa9oVjKP4RfjgBSm25JjS0Xrkc53Qjcx4jdV040RmzTKLQ+gtU1+4dUl9gIwuszF3k/oAwUb6VfpRSaA==}
     engines: {node: '>=6.11.5'}
 
-  '@utoo/pack-darwin-arm64@0.0.1-alpha.15':
-    resolution: {integrity: sha512-B2NrKx5zZNDYAnwEatVRYMfqxZZvuAMRMQYG+zmHN7//UAiTd8BAW055Z1F57oVUe633HBZIKLKTL3By5y6fkw==}
+  '@utoo/pack-darwin-arm64@0.0.1-alpha.18':
+    resolution: {integrity: sha512-90OPBjvyOImmD2HWmBzo4npEg8fBNz08vZgWt1RiMZRmWAUAdlNQTYNlIVyg2temeM6d9cIKVTH65WO9J0CSpg==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
 
-  '@utoo/pack-darwin-x64@0.0.1-alpha.15':
-    resolution: {integrity: sha512-G8mljyAk5tway43IVFldP6Nftv2AV8JJTlAjkmYNNZHIt555j12p66lWCzQgJUeWjBuF6j1nD6m2YULghx6Sdg==}
+  '@utoo/pack-darwin-x64@0.0.1-alpha.18':
+    resolution: {integrity: sha512-WwqDMVC2tzXJU1BZKSCWrSTviPkwUmdYDW/TltfFAq1HIJY/Sw1FxbQs1z9HjG4g0zfUpF3SMIn8Qc2KqO2lVg==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
 
-  '@utoo/pack-linux-arm64-gnu@0.0.1-alpha.15':
-    resolution: {integrity: sha512-B2nMsD+D5xz36HTPG3OKKfwOThm61RbJ0rBw5PCcCV9bxzImnYZkaeRSpjE0Px5L+zpB38pilg83peeReLgEcw==}
+  '@utoo/pack-linux-arm64-gnu@0.0.1-alpha.18':
+    resolution: {integrity: sha512-ZNpRq3QFXygnEUmYtwo+2Pf1d0ywQYd2ovr+3Y34aDo7LRFgdlcEtxTAihTGOowhplsOh4mMTegqUTB4hylgKQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@utoo/pack-linux-arm64-musl@0.0.1-alpha.15':
-    resolution: {integrity: sha512-7R+V3oGUbtdr/Wt0x980Z+LvLdPjzr4hmVTFMEcxMC6tNhtAXqeTvHIhQ5fBrd4S+8wbCLA7htXICM82QYr9EA==}
+  '@utoo/pack-linux-arm64-musl@0.0.1-alpha.18':
+    resolution: {integrity: sha512-ZCs2MX2eNykMxpdSmAfc37zYhwylJDcK2XhcC5bgaI6v78/EIVD75C0h+PiCquhs+BJLGufa3p4AeqiGcZS1Cw==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@utoo/pack-linux-x64-gnu@0.0.1-alpha.15':
-    resolution: {integrity: sha512-I9JGQUGHvwId85xYNd1p33zp3J0c20ecx3bZYknOrWZQJ8MmrM66gmLgmp7e7uz5uUBCha0cKANb3zrbDLPc9Q==}
+  '@utoo/pack-linux-x64-gnu@0.0.1-alpha.18':
+    resolution: {integrity: sha512-hzaU+DftPLFFWG4byso5EHNvGxXaPDLPRxufKn/k+4gVxM8i4pjdCKuArAqJNlXAPFshw/psoXnqNsGtqjROIQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  '@utoo/pack-linux-x64-musl@0.0.1-alpha.15':
-    resolution: {integrity: sha512-f0gV153AEXfI8oV6EcntVmc5JDwBdogrdZ0wwoNbBVE/jG2l7s4p6cXvIP4iCMGBh7iiHwzp2SuaXMEc9JakZg==}
+  '@utoo/pack-linux-x64-musl@0.0.1-alpha.18':
+    resolution: {integrity: sha512-5hLL6itJe1R8I2E8/vJon2vDmhx+jEzTQHAmAEpu52I7yxJJk5G5gEaCE1EA8evbApQoJIeyyEhK7cw4fA8eeg==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  '@utoo/pack-win32-x64-msvc@0.0.1-alpha.15':
-    resolution: {integrity: sha512-mJQPgup28I7DsWQ++4kUsVWmScS1/NsRVB66cgYBl2+G0hIWX/3YjAP6sd7qmmr2cixNXa0am3zZPK5ht/VdhQ==}
+  '@utoo/pack-win32-x64-msvc@0.0.1-alpha.18':
+    resolution: {integrity: sha512-zlMxo7QSdVryIUW1EapSfmi63NwHM1RjFknp8NMW46LlGFZ4yp0wEU0oEmTeapJ2e/0LRS8aVFUgPcR8KirbKQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
 
-  '@utoo/pack@0.0.1-alpha.15':
-    resolution: {integrity: sha512-/pb5+//0PrQwqGa6RDquraFjfMw3X3zfkRuZCwicVTRj9A2s4arjCdkehTYsFXiRvl66Pa0rh2wv4DlPmByJew==}
+  '@utoo/pack@0.0.1-alpha.18':
+    resolution: {integrity: sha512-D4ZPtMkSeYjDlkmtZKOCL5Qa7otFsPqeYVTIv2E7rRQItlH6JROohiWKUJWipAz0pHusSQcLPjp7AwyV8XSQlQ==}
     engines: {node: '>= 10'}
+    peerDependencies:
+      '@types/webpack': ^5.28.5
 
   '@utoo/style-loader@1.0.1':
     resolution: {integrity: sha512-qdDE7tzJYXXT/1U02TdLbWa2eSa1WJznWRo95MzL19rVSr5osxZDwz7Xj8yp4YDy+6IgE5SIBgWFc50O58YgYw==}
@@ -1519,8 +1524,8 @@ packages:
   fastq@1.19.1:
     resolution: {integrity: sha512-GwLTyxkCXjXbxqIhTsMI2Nui8huMPtnxg7krajPJAjnEG/iiOS7i+zCtWGZR9G0NBKbXKh6X9m9UIsYX/N6vvQ==}
 
-  father@4.5.6-canary.0:
-    resolution: {integrity: sha512-xMU2FkATLAOUUH0xWO2zJB6lzKPZK63jRINZzjMva4rrcKFnvqjE7EFY7TBkPixMe/6RcE2JT4b3dlRlEoveEg==}
+  father@4.5.6-canary.1:
+    resolution: {integrity: sha512-4Zu5aal1BuDNWGNCJoZpbSzRwMeJG497kthhADlKYrQ9ltkN2fNMLpgqd5Jxt8d9W+hcV/tNxFc/ml5v7/Ug4Q==}
     hasBin: true
 
   file-system-cache@2.0.0:
@@ -3731,6 +3736,17 @@ snapshots:
 
   '@types/stylis@4.2.5': {}
 
+  '@types/webpack@5.28.5':
+    dependencies:
+      '@types/node': 24.0.4
+      tapable: 2.2.2
+      webpack: 5.99.9
+    transitivePeerDependencies:
+      - '@swc/core'
+      - esbuild
+      - uglify-js
+      - webpack-cli
+
   '@types/yargs-parser@21.0.3': {}
 
   '@types/yargs@17.0.33':
@@ -3768,7 +3784,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@umijs/bundler-webpack@4.4.11(typescript@5.4.2)(webpack@5.99.9)':
+  '@umijs/bundler-webpack@4.4.11(@types/webpack@5.28.5)(typescript@5.4.2)(webpack@5.99.9)':
     dependencies:
       '@svgr/core': 6.5.1
       '@svgr/plugin-jsx': 6.5.1(@svgr/core@6.5.1)
@@ -3778,7 +3794,7 @@ snapshots:
       '@umijs/bundler-utils': 4.4.11
       '@umijs/case-sensitive-paths-webpack-plugin': 1.0.1
       '@umijs/mfsu': 4.4.11
-      '@umijs/react-refresh-webpack-plugin': 0.5.11(react-refresh@0.14.0)(webpack@5.99.9)
+      '@umijs/react-refresh-webpack-plugin': 0.5.11(@types/webpack@5.28.5)(react-refresh@0.14.0)(webpack@5.99.9)
       '@umijs/utils': 4.4.11
       cors: 2.8.5
       css-loader: 6.7.1(webpack@5.99.9)
@@ -3821,7 +3837,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@umijs/react-refresh-webpack-plugin@0.5.11(react-refresh@0.14.0)(webpack@5.99.9)':
+  '@umijs/react-refresh-webpack-plugin@0.5.11(@types/webpack@5.28.5)(react-refresh@0.14.0)(webpack@5.99.9)':
     dependencies:
       ansi-html-community: 0.0.8
       common-path-prefix: 3.0.0
@@ -3834,6 +3850,8 @@ snapshots:
       schema-utils: 3.3.0
       source-map: 0.7.4
       webpack: 5.99.9
+    optionalDependencies:
+      '@types/webpack': 5.28.5
 
   '@umijs/utils@4.4.11':
     dependencies:
@@ -3842,30 +3860,31 @@ snapshots:
 
   '@utoo/loader-runner@1.0.1': {}
 
-  '@utoo/pack-darwin-arm64@0.0.1-alpha.15':
+  '@utoo/pack-darwin-arm64@0.0.1-alpha.18':
     optional: true
 
-  '@utoo/pack-darwin-x64@0.0.1-alpha.15':
+  '@utoo/pack-darwin-x64@0.0.1-alpha.18':
     optional: true
 
-  '@utoo/pack-linux-arm64-gnu@0.0.1-alpha.15':
+  '@utoo/pack-linux-arm64-gnu@0.0.1-alpha.18':
     optional: true
 
-  '@utoo/pack-linux-arm64-musl@0.0.1-alpha.15':
+  '@utoo/pack-linux-arm64-musl@0.0.1-alpha.18':
     optional: true
 
-  '@utoo/pack-linux-x64-gnu@0.0.1-alpha.15':
+  '@utoo/pack-linux-x64-gnu@0.0.1-alpha.18':
     optional: true
 
-  '@utoo/pack-linux-x64-musl@0.0.1-alpha.15':
+  '@utoo/pack-linux-x64-musl@0.0.1-alpha.18':
     optional: true
 
-  '@utoo/pack-win32-x64-msvc@0.0.1-alpha.15':
+  '@utoo/pack-win32-x64-msvc@0.0.1-alpha.18':
     optional: true
 
-  '@utoo/pack@0.0.1-alpha.15(webpack@5.99.9)':
+  '@utoo/pack@0.0.1-alpha.18(@types/webpack@5.28.5)(webpack@5.99.9)':
     dependencies:
       '@babel/code-frame': 7.22.5
+      '@types/webpack': 5.28.5
       '@utoo/loader-runner': 1.0.1
       '@utoo/style-loader': 1.0.1
       less: 4.3.0
@@ -3880,13 +3899,13 @@ snapshots:
       send: 0.17.1
       ws: 8.18.2
     optionalDependencies:
-      '@utoo/pack-darwin-arm64': 0.0.1-alpha.15
-      '@utoo/pack-darwin-x64': 0.0.1-alpha.15
-      '@utoo/pack-linux-arm64-gnu': 0.0.1-alpha.15
-      '@utoo/pack-linux-arm64-musl': 0.0.1-alpha.15
-      '@utoo/pack-linux-x64-gnu': 0.0.1-alpha.15
-      '@utoo/pack-linux-x64-musl': 0.0.1-alpha.15
-      '@utoo/pack-win32-x64-msvc': 0.0.1-alpha.15
+      '@utoo/pack-darwin-arm64': 0.0.1-alpha.18
+      '@utoo/pack-darwin-x64': 0.0.1-alpha.18
+      '@utoo/pack-linux-arm64-gnu': 0.0.1-alpha.18
+      '@utoo/pack-linux-arm64-musl': 0.0.1-alpha.18
+      '@utoo/pack-linux-x64-gnu': 0.0.1-alpha.18
+      '@utoo/pack-linux-x64-musl': 0.0.1-alpha.18
+      '@utoo/pack-win32-x64-msvc': 0.0.1-alpha.18
     transitivePeerDependencies:
       - '@rspack/core'
       - bufferutil
@@ -4328,7 +4347,7 @@ snapshots:
     dependencies:
       cipher-base: 1.0.6
       inherits: 2.0.4
-      ripemd160: 2.0.1
+      ripemd160: 2.0.2
       sha.js: 2.4.11
 
   create-hash@1.2.0:
@@ -4756,16 +4775,16 @@ snapshots:
     dependencies:
       reusify: 1.1.0
 
-  father@4.5.6-canary.0(@babel/core@7.27.4)(@types/node@24.0.4)(styled-components@6.1.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(webpack@5.99.9):
+  father@4.5.6-canary.1(@babel/core@7.27.4)(@types/node@24.0.4)(@types/webpack@5.28.5)(styled-components@6.1.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(webpack@5.99.9):
     dependencies:
       '@microsoft/api-extractor': 7.43.7(@types/node@24.0.4)
       '@umijs/babel-preset-umi': 4.4.11
       '@umijs/bundler-utils': 4.4.11
-      '@umijs/bundler-webpack': 4.4.11(typescript@5.4.2)(webpack@5.99.9)
+      '@umijs/bundler-webpack': 4.4.11(@types/webpack@5.28.5)(typescript@5.4.2)(webpack@5.99.9)
       '@umijs/case-sensitive-paths-webpack-plugin': 1.0.1
       '@umijs/core': 4.4.11
       '@umijs/utils': 4.4.11
-      '@utoo/pack': 0.0.1-alpha.15(webpack@5.99.9)
+      '@utoo/pack': 0.0.1-alpha.18(@types/webpack@5.28.5)(webpack@5.99.9)
       '@vercel/ncc': 0.33.3
       babel-plugin-dynamic-import-node: 2.3.3
       babel-plugin-module-resolver: 4.1.0
