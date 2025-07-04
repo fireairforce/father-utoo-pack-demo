@@ -5,6 +5,10 @@ export default defineConfig({
     umd: {
         bundler: 'utoo-pack',
         generateUnminified: true,
+        externals: {
+            'react': 'React',
+            'react-dom': 'ReactDOM',
+        }
     },
     define: {
         'process.env.FATHER_PUBLISH_VERSION': "0.0.1"
