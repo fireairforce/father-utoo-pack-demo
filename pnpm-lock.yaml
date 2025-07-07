@@ -4,16 +4,13 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  '@utoo/pack': 0.0.1-alpha.21
-
 importers:
 
   .:
     dependencies:
       father:
-        specifier: 4.5.6-canary.1
-        version: 4.5.6-canary.1(@babel/core@7.27.4)(@types/node@24.0.4)(@types/webpack@5.28.5)(styled-components@6.1.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(webpack@5.99.9)
+        specifier: 4.5.6-canary.4
+        version: 4.5.6-canary.4(@babel/core@7.27.4)(@types/node@24.0.4)(@types/webpack@5.28.5)(styled-components@6.1.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(webpack@5.99.9)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -1524,8 +1521,8 @@ packages:
   fastq@1.19.1:
     resolution: {integrity: sha512-GwLTyxkCXjXbxqIhTsMI2Nui8huMPtnxg7krajPJAjnEG/iiOS7i+zCtWGZR9G0NBKbXKh6X9m9UIsYX/N6vvQ==}
 
-  father@4.5.6-canary.1:
-    resolution: {integrity: sha512-4Zu5aal1BuDNWGNCJoZpbSzRwMeJG497kthhADlKYrQ9ltkN2fNMLpgqd5Jxt8d9W+hcV/tNxFc/ml5v7/Ug4Q==}
+  father@4.5.6-canary.4:
+    resolution: {integrity: sha512-jdCJns2qgB83UxEXTJ5AnGfPFaSz3xRZNd1YtjgD/gpo3i5557dl3c3SdtYO+xFKJT/QcrLuE0WLK2ao7I6s+g==}
     hasBin: true
 
   file-system-cache@2.0.0:
@@ -4775,7 +4772,7 @@ snapshots:
     dependencies:
       reusify: 1.1.0
 
-  father@4.5.6-canary.1(@babel/core@7.27.4)(@types/node@24.0.4)(@types/webpack@5.28.5)(styled-components@6.1.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(webpack@5.99.9):
+  father@4.5.6-canary.4(@babel/core@7.27.4)(@types/node@24.0.4)(@types/webpack@5.28.5)(styled-components@6.1.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(webpack@5.99.9):
     dependencies:
       '@microsoft/api-extractor': 7.43.7(@types/node@24.0.4)
       '@umijs/babel-preset-umi': 4.4.11
