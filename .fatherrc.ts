@@ -8,14 +8,13 @@ export default defineConfig({
         externals: {
             'react': 'React',
             'react-dom': 'ReactDOM',
-        }
+        },
+        alias: {
+            '@': path.resolve(__dirname, './src'),
+            'hello-a': path.resolve(__dirname, './src/a.ts'),
+        },
     },
     define: {
         'process.env.FATHER_PUBLISH_VERSION': "0.0.1"
-    },
-    alias: {
-        '@': path.resolve(__dirname, './src'),
-        'hello-a': path.resolve(__dirname, './src/a.tsx'),
-        'hello-foo': path.resolve(__dirname, './src/foo.ts'),
     },
 })
