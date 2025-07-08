@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       father:
-        specifier: 4.5.6-canary.6
-        version: 4.5.6-canary.6(@babel/core@7.27.4)(@types/node@24.0.4)(@types/webpack@5.28.5)(styled-components@6.1.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(webpack@5.99.9)
+        specifier: 4.6.0
+        version: 4.6.0(@babel/core@7.27.4)(@types/node@24.0.4)(@types/webpack@5.28.5)(styled-components@6.1.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(webpack@5.99.9)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -1521,8 +1521,8 @@ packages:
   fastq@1.19.1:
     resolution: {integrity: sha512-GwLTyxkCXjXbxqIhTsMI2Nui8huMPtnxg7krajPJAjnEG/iiOS7i+zCtWGZR9G0NBKbXKh6X9m9UIsYX/N6vvQ==}
 
-  father@4.5.6-canary.6:
-    resolution: {integrity: sha512-bY5LaHHlGDMrVT7LDZcbsYxjGPXZVaytD0ARXMPrGpLLv2LSKP0yQpFroWncabwPojbO6Wvim6A2Y32iYTtt8A==}
+  father@4.6.0:
+    resolution: {integrity: sha512-Why4pUAPeHoHOjcosq9W41cSjBvoN8Ssh46COVIoYP9/2Gj9Sm8jlEy+tUQvUqFKw2YKA7SS7iSHThp0q603yw==}
     hasBin: true
 
   file-system-cache@2.0.0:
@@ -4772,7 +4772,7 @@ snapshots:
     dependencies:
       reusify: 1.1.0
 
-  father@4.5.6-canary.6(@babel/core@7.27.4)(@types/node@24.0.4)(@types/webpack@5.28.5)(styled-components@6.1.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(webpack@5.99.9):
+  father@4.6.0(@babel/core@7.27.4)(@types/node@24.0.4)(@types/webpack@5.28.5)(styled-components@6.1.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(webpack@5.99.9):
     dependencies:
       '@microsoft/api-extractor': 7.43.7(@types/node@24.0.4)
       '@umijs/babel-preset-umi': 4.4.11
