@@ -3,7 +3,7 @@ import path from 'path';
 
 export default defineConfig({
     umd: {
-        bundler: 'utoo-pack',
+        bundler: 'utoopack',
         generateUnminified: true,
         externals: {
             'react': 'React',
