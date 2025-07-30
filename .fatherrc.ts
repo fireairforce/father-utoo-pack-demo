@@ -6,8 +6,14 @@ export default defineConfig({
         bundler: 'utoopack',
         generateUnminified: true,
         externals: {
-            'react': 'React',
-            'react-dom': 'ReactDOM',
+            react: {
+                root: 'React',
+                commonjs: 'react',
+            },
+            'react-dom': {
+                root: 'ReactDOM',
+                commonjs: 'react-dom',
+            },
         },
         alias: {
             '@': path.resolve(__dirname, './src'),

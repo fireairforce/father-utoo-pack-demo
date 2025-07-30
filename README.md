@@ -31,12 +31,12 @@ Turbopack resolver now can't resolve dependencies whick link by symlink, update 
 
 ```rs
 #[turbo_tasks::function]
-pub async fn get_pack_package(context_directory: FileSystemPath) -> Result<Vc<FileSystemPath>> {
+pub async fn get_utoopack_path(project_path: FileSystemPath) -> Result<Vc<FileSystemPath>> {
     let result = resolve(
-        context_directory.clone(),
+        project_path.clone(),
         ReferenceType::CommonJs(CommonJsReferenceSubType::Undefined),
-        Request::parse(Pattern::Constant("@utoo/pack/package.json".into())),
-        node_cjs_resolve_options(context_directory.root().await?.clone_value()),
+        Request::parse(Pattern::Constant(rcstr!("@utoo/pack/package.json"))),
+        node_cjs_resolve_options(project_path.root().owned().await?),
     );
     let first_source = result.first_source().await?;
     if let Some(source) = &*first_source {
@@ -44,7 +44,7 @@ pub async fn get_pack_package(context_directory: FileSystemPath) -> Result<Vc<Fi
     }
 
     // For Debug
-    let real_fs = context_directory.fs();
+    let real_fs = project_path.fs();
     let local_utoo_pack_path = real_fs
         .root()
         .await?
@@ -53,6 +53,15 @@ pub async fn get_pack_package(context_directory: FileSystemPath) -> Result<Vc<Fi
         .map_err(|_| anyhow::anyhow!("Failed to join path"))?;
 
     Ok(local_utoo_pack_path.cell())
+}
+
+#[turbo_tasks::function]
+pub async fn get_utoopack_dependency_package(
+    project_path: FileSystemPath,
+    dependency: RcStr,
+) -> Result<Vc<RcStr>> {
+    let user_local_path = format!("/Users/zoomdong/mako/node_modules/{dependency}").into();
+    Ok(Vc::cell(user_local_path))
 }
 ```
 
