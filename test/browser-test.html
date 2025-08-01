@@ -79,6 +79,10 @@
         </div>
     </div>
 
+    <!-- React UMD 文件 -->
+    <script src="../react-umd.js"></script>
+    <script>console.log('react', globalThis['React'])</script>
+
     <!-- 引入你的UMD文件 -->
     <script src="../dist/umd/utoo-pack-father.js"></script>
     <script>console.log('after umd', window.a)</script>
