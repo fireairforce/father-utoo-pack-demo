@@ -32,17 +32,6 @@ Turbopack resolver now can't resolve dependencies whick link by symlink, update 
 ```rs
 #[turbo_tasks::function]
 pub async fn get_utoopack_path(project_path: FileSystemPath) -> Result<Vc<FileSystemPath>> {
-    let result = resolve(
-        project_path.clone(),
-        ReferenceType::CommonJs(CommonJsReferenceSubType::Undefined),
-        Request::parse(Pattern::Constant(rcstr!("@utoo/pack/package.json"))),
-        node_cjs_resolve_options(project_path.root().owned().await?),
-    );
-    let first_source = result.first_source().await?;
-    if let Some(source) = &*first_source {
-        return Ok(source.ident().path().await?.parent().cell());
-    }
-
     // For Debug
     let real_fs = project_path.fs();
     let local_utoo_pack_path = real_fs
