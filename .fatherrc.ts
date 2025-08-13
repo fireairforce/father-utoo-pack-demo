@@ -16,6 +16,11 @@ export default defineConfig({
                 commonjs: 'react-dom',
                 commonjs2: 'react-dom',
             },
+            'antd': {
+                root: 'antd',
+                commonjs: 'antd',
+                commonjs2: 'antd',
+            }
         },
         alias: {
             '@': path.resolve(__dirname, './src'),

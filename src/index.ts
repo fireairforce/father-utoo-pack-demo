@@ -15,3 +15,9 @@ console.log(React);
 export { a };
 
 export const b = 'wd';
+
+
+// PPFE
+// const fn0 = () => 0
+// const fn1 = (() => 1)
+// console.log(fn0, function() { return fn1() }())
