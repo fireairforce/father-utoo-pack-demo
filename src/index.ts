@@ -1,6 +1,7 @@
 import React from 'react';
 import antd from 'antd';
 import { a as aa } from 'hello-a';
+import './index.less';
 
 console.log(aa);
 
