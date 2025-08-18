@@ -3,8 +3,9 @@ import path from 'path';
 
 export default defineConfig({
     umd: {
-        bundler: 'utoopack',
+        bundler: 'webpack',
         generateUnminified: true,
+        extractCSS: false,
         externals: {
             react: {
                 root: 'React',
