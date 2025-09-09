@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  '@utoo/pack': 0.0.1-alpha.40
-
 importers:
 
   .:
@@ -15,8 +12,8 @@ importers:
         specifier: ^5.26.0
         version: 5.27.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       father:
-        specifier: 4.6.1-canary.3
-        version: 4.6.1-canary.3(@babel/core@7.27.4)(@types/node@24.0.4)(@types/webpack@5.28.5)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(webpack@5.99.9)
+        specifier: 4.6.4
+        version: 4.6.4(@babel/core@7.27.4)(@types/node@24.0.4)(@types/webpack@5.28.5)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(webpack@5.99.9)
       react:
         specifier: ^19.1.0
         version: 19.1.1
@@ -1643,8 +1640,8 @@ packages:
   fastq@1.19.1:
     resolution: {integrity: sha512-GwLTyxkCXjXbxqIhTsMI2Nui8huMPtnxg7krajPJAjnEG/iiOS7i+zCtWGZR9G0NBKbXKh6X9m9UIsYX/N6vvQ==}
 
-  father@4.6.1-canary.3:
-    resolution: {integrity: sha512-YjAlvRguK7pdu4nMtlswSZx7tKURWKHCKorMyRnDtV9+PB08K3LHDuE1bkUys9g9qOi+3kJnRlDdMD+KnJSaYw==}
+  father@4.6.4:
+    resolution: {integrity: sha512-LeDN9diBM72El+7dGhZ4IrnLaU1EiQ+9O0/vqg17ZgY7c481nJkKhgJSJgFtMRLEUBj7m93E8DDwhU1rLWjOAw==}
     hasBin: true
 
   file-system-cache@2.0.0:
@@ -5354,7 +5351,7 @@ snapshots:
     dependencies:
       reusify: 1.1.0
 
-  father@4.6.1-canary.3(@babel/core@7.27.4)(@types/node@24.0.4)(@types/webpack@5.28.5)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(webpack@5.99.9):
+  father@4.6.4(@babel/core@7.27.4)(@types/node@24.0.4)(@types/webpack@5.28.5)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(webpack@5.99.9):
     dependencies:
       '@microsoft/api-extractor': 7.43.7(@types/node@24.0.4)
       '@umijs/babel-preset-umi': 4.4.12

@@ -22,7 +22,7 @@ When test `utoo-pack` under local, use pnpm link to your local file:
 ```json
 "pnpm": {
   "overrides": {
-    "@utoo/pack": "link:../mako/packages/pack"
+    "@utoo/pack": "link:../utoo/packages/pack"
   }
 },
 ```
@@ -38,7 +38,7 @@ pub async fn get_utoopack_path(project_path: FileSystemPath) -> Result<Vc<FileSy
         .root()
         .await?
         .clone()
-        .join("/Users/zoomdong/mako/packages/pack")
+        .join("/Users/zoomdong/utoo/packages/pack")
         .map_err(|_| anyhow::anyhow!("Failed to join path"))?;
 
     Ok(local_utoo_pack_path.cell())
@@ -49,7 +49,7 @@ pub async fn get_utoopack_dependency_package(
     project_path: FileSystemPath,
     dependency: RcStr,
 ) -> Result<Vc<RcStr>> {
-    let user_local_path = format!("/Users/zoomdong/mako/node_modules/{dependency}").into();
+    let user_local_path = format!("/Users/zoomdong/utoo/node_modules/{dependency}").into();
     Ok(Vc::cell(user_local_path))
 }
 ```
