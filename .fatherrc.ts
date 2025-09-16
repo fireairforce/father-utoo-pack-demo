@@ -3,7 +3,7 @@ import path from 'path';
 
 export default defineConfig({
     umd: {
-        bundler: 'webpack',
+        bundler: 'utoopack',
         generateUnminified: true,
         extractCSS: false,
         externals: {
