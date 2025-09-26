@@ -31,20 +31,6 @@ Turbopack resolver now can't resolve dependencies whick link by symlink, update 
 
 ```rs
 #[turbo_tasks::function]
-pub async fn get_utoopack_path(project_path: FileSystemPath) -> Result<Vc<FileSystemPath>> {
-    // For Debug
-    let real_fs = project_path.fs();
-    let local_utoo_pack_path = real_fs
-        .root()
-        .await?
-        .clone()
-        .join("/Users/zoomdong/utoo/packages/pack")
-        .map_err(|_| anyhow::anyhow!("Failed to join path"))?;
-
-    Ok(local_utoo_pack_path.cell())
-}
-
-#[turbo_tasks::function]
 pub async fn get_utoopack_dependency_package(
     project_path: FileSystemPath,
     dependency: RcStr,
@@ -61,3 +47,5 @@ If you use pnpm as package manager, you need to set `.npmrc` to hoist `@utoo/pac
 ```bash
 public-hoist-pattern[]=@utoo/pack
 ```
+
+If your `@utoo/pack` version is after `0.0.1-alpha.52`, you will not need to hoist it.

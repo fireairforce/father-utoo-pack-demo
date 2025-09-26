@@ -10,7 +10,7 @@
     "version": "father version"
   },
   "dependencies": {
-    "father": "4.6.6-canary.1",
+    "father": "4.6.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "antd": "^5.26.0"

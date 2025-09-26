@@ -12,8 +12,8 @@ importers:
         specifier: ^5.26.0
         version: 5.27.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       father:
-        specifier: 4.6.6-canary.1
-        version: 4.6.6-canary.1(@babel/core@7.27.4)(@types/node@24.0.4)(@types/webpack@5.28.5)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(webpack@5.99.9)
+        specifier: 4.6.6
+        version: 4.6.6(@babel/core@7.27.4)(@types/node@24.0.4)(@types/webpack@5.28.5)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(webpack@5.99.9)
       react:
         specifier: ^19.1.0
         version: 19.1.1
@@ -1640,8 +1640,8 @@ packages:
   fastq@1.19.1:
     resolution: {integrity: sha512-GwLTyxkCXjXbxqIhTsMI2Nui8huMPtnxg7krajPJAjnEG/iiOS7i+zCtWGZR9G0NBKbXKh6X9m9UIsYX/N6vvQ==}
 
-  father@4.6.6-canary.1:
-    resolution: {integrity: sha512-4IQ/yB0OMxbtSMa69WpXNdcH2x+U9AuFZ+VbwhyCD51sHS8mBdw60flaIayMChYc5uLkvWhejZsTT15ABWZEQg==}
+  father@4.6.6:
+    resolution: {integrity: sha512-xBwdlNMrnksAgguJHC/8R2zOLdomDSuNj9+uL2BU6G6X3MpLYU7wySg4ZLY34IxeXQyYY6XRDwzYrjO4zY3n5A==}
     hasBin: true
 
   file-system-cache@2.0.0:
@@ -5351,7 +5351,7 @@ snapshots:
     dependencies:
       reusify: 1.1.0
 
-  father@4.6.6-canary.1(@babel/core@7.27.4)(@types/node@24.0.4)(@types/webpack@5.28.5)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(webpack@5.99.9):
+  father@4.6.6(@babel/core@7.27.4)(@types/node@24.0.4)(@types/webpack@5.28.5)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(webpack@5.99.9):
     dependencies:
       '@microsoft/api-extractor': 7.43.7(@types/node@24.0.4)
       '@umijs/babel-preset-umi': 4.5.1
