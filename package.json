@@ -10,7 +10,7 @@
     "version": "father version"
   },
   "dependencies": {
-    "father": "4.6.8",
+    "father": "4.6.11",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "antd": "^5.26.0"
